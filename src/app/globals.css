@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
+/* ParseIQ design tokens — light theme only (see PROJECT_SPEC.md §1) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --piq-bg: #faf8f2;
+  --piq-surface: #ffffff;
+  --piq-surface-2: #f5f0e7;
+  --piq-orange: #f26a32;
+  --piq-orange-deep: #e84f20;
+  --piq-yellow: #ffb52e;
+  --piq-yellow-light: #fff0c2;
+  --piq-text: #29251f;
+  --piq-text-muted: #81796f;
+  --piq-border: #eae3d8;
+  --piq-muted-bg: #f3e9d9;
+  --piq-success: #27966b;
+  --piq-error: #d94a42;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--piq-bg);
+  --color-surface: var(--piq-surface);
+  --color-surface-2: var(--piq-surface-2);
+  --color-brand: var(--piq-orange);
+  --color-brand-deep: var(--piq-orange-deep);
+  --color-accent: var(--piq-yellow);
+  --color-accent-light: var(--piq-yellow-light);
+  --color-ink: var(--piq-text);
+  --color-ink-muted: var(--piq-text-muted);
+  --color-line: var(--piq-border);
+  --color-muted: var(--piq-muted-bg);
+  --color-success: var(--piq-success);
+  --color-danger: var(--piq-error);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(41 37 31 / 0.04), 0 4px 16px rgb(41 37 31 / 0.06);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--piq-bg);
+  color: var(--piq-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
